@@ -1,0 +1,415 @@
+*, *::after, *::before{
+   
+    box-sizing: border-box;
+}
+
+:root{
+    --main-container-size: 90rem;
+    --main-container-height: 60rem;
+}
+
+
+
+body {
+	
+	/* Keep the inherited background full size. */
+
+	background-attachment: fixed; 
+	background-size: cover;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+    position: relative;
+    background-color: rgba(15, 12, 12, 0.801);
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.title div{
+    color: aliceblue;
+    cursor: pointer;
+    font-family: "Dancing Script" ;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.home-page,
+.main-title,
+.resalts{
+    
+    width:190px;
+}
+
+.home-page2,
+.cat2{
+    display: none;
+}
+
+.home-page2{
+    background: url(./assets/svg/home_white_24dp.svg) no-repeat;
+}
+.cat2{
+    background: url(./assets/svg/menu_book_white_24dp.svg) no-repeat;
+}
+.main-title{
+    text-align: center;
+}
+.matovoye-steklo {
+    
+    width: var(--main-container-size);
+    height: var(--main-container-height);
+    box-shadow: 150px 150px 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+  }
+  
+  .matovoye-steklo:before {
+      
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 150px 150px 2000px rgba(153, 153, 153, 0.5);
+    filter: blur(2px);
+    margin: -20px;
+  }
+
+.content-card{
+    background: linear-gradient(0deg, rgb(71, 71, 71) 0%, rgba(0,0,0,1) 100%);
+    height: var(--main-container-height);
+    width: calc(var(--main-container-size)*4) ;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-page-cont{
+    height: var(--main-container-height);
+    width: var(--main-container-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content{
+   
+    overflow-y: scroll;
+    height: calc(var(--main-container-height) - 4rem);
+    width: calc(var(--main-container-size) - 10rem);
+    border-bottom: 3px rgb(82, 82, 82) solid;
+    border-top: 3px rgb(39, 39, 39) solid;
+    position: relative;
+}
+
+.main-content::-webkit-scrollbar{
+    width: 0;
+}
+.categories{
+    height: 60%;
+}
+
+.categories,
+.small-categories-list-artists,
+.quizy-question-artists,
+.small-categories-list-pictures,
+.quizy-question-pictures{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.small-categories-list-pictures,
+.small-categories-list-artists{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.category-item,
+.small-category-item-artists,
+.small-category-item-pictures{
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.small-category-item-artists,
+.small-category-item-pictures{
+    position: relative;
+
+}
+
+.category-score{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(87, 6, 6);
+    color:aliceblue;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category-score div{
+    width:50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category-score:hover div{
+    transition: 0.4s ease;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.category-score:hover div p{
+    color: rgb(87, 6, 6);
+}
+.category-score p{
+    font-size: 1.3rem;
+}
+.score-artist,
+.score-pictures{
+    top:10px;
+    left:10px;
+    position: absolute;
+    width:50px;
+    height: 50px;
+    background-color:rgb(87, 6, 6);
+    z-index: 2;
+    text-align: center;
+    border-radius: 50%;
+    color: aliceblue;
+    padding-top: 17px;
+}
+
+.category-item h2,
+.small-categories-list-artists h2,
+.small-categories-list-pictures h2
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Dancing Script" ;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    text-shadow: 4px 4px 2px rgb(31, 30, 30);
+}
+
+.small-category-item-pictures:hover,
+.small-category-item-artists:hover{
+    background-color: rgb(129, 125, 125);
+    transition: 0.4s;
+}
+
+
+.category-item:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    
+}
+
+.answers-artists{
+    margin: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.answers-pictures{
+    margin: 0 auto;
+    max-width:410px;
+    max-height: 410px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.answer-item-pictures{
+    
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.answer-item-pictures img{
+    max-width:200px;
+    height: auto;
+}
+
+
+.answer-item-pictures:hover img{
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    box-shadow: 37px 37px 56px -6px rgba(0, 0, 0, 0.36);
+}
+
+.answer-item-artists{
+    padding-top: 20px;
+    height: 60px;
+    width: 200px;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    
+}
+.quizy-question-artists h2,
+.quizy-question-pictures h2{
+    font-family: "Dancing Script";
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: aliceblue;
+    text-align: center;
+}
+
+
+.answer-item-artists{
+    color: aliceblue;
+}
+.answer-item-artists:hover{
+    transition: 0.2s;
+    background-color: rgba(97, 99, 98, 0.432);    
+}
+
+
+.popup,
+.popup2{
+    
+    position: absolute;
+    width:100%;
+    height: 100%;
+    
+    transition: 0.3s;
+    bottom: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    
+}
+.popup h3,
+.popup2 h3{
+    font-family: "Dancing Script";
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.next-btn,
+.next-btn2{
+    border:0;
+    color: aliceblue;
+    font-family: "Dancing Script";
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.74);
+    width:70px;
+    height: 30px;
+}
+
+.next-btn:hover,
+.next-btn2:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+.final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.final p{
+    font-size: 1.5rem;
+    color:aliceblue;
+    margin-bottom: 30px;
+}
+
+.final button{
+    width: 70px;
+    height: 40px;
+    border: 0;
+    font-family: "Dancing Script";
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.final button:hover{
+    text-shadow: 5px 2px 2px rgb(116, 115, 115);
+    transition: 0.3s;
+}
+
+.score-container {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.score-container-item{
+    margin-bottom: 20px;
+}
+.category-item h2{
+    font-size: 2rem;
+}
+@media (max-width:1440px) {
+    :root{
+        --main-container-size: 100vw;
+        --main-container-height: 90vh;
+    }
+    .main-content{
+   
+        overflow-y: scroll;
+        height:var(--main-container-height);
+        width: var(--main-container-size) ;
+        border-bottom: 3px rgb(82, 82, 82) solid;
+        border-top: 3px rgb(39, 39, 39) solid;
+        position: relative;
+    }
+   
+}
+
+@media (max-width:600px) {
+    
+    .home-page,
+    .cat{
+        display: none;
+    }
+    .home-page2,
+    .cat2{
+        display: block;
+        width: 32px;
+        height: 32px;
+        
+    }
+    .answer-item-pictures img{
+        width: 150px;
+        height: 150px;
+    }
+    .popup img{
+        width: 300px;
+        height: 300px;
+    }
+    .popup2 img{
+        width: 300px;
+        height: 300px;
+    }
+    .quizy-question-artists img{
+        width: 300px;
+        height: 300px;
+    }
+}
